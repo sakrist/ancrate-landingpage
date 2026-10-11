@@ -29,12 +29,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       <nav aria-label="Main navigation">
         <a href="/#features">Features</a>
         <a href="/support/" aria-current={Astro.url.pathname === '/support/' ? 'page' : undefined}>Support</a>
-        <a class="nav-button" href={app.downloadUrl || '/#availability'}>{app.downloadUrl ? 'Get Ancrate' : 'Coming soon'}<span aria-hidden="true">↗</span></a>
+        <a class="nav-button" href={app.downloadUrl || '/#availability'}>{app.downloadUrl ? 'Get Ancrate' : 'Coming soon'}</a>
       </nav>
     </header>
     <main id="main"><slot /></main>
     <footer class="site-footer wrap">
-      <div><a class="brand" href="/"><img src="/icon.png" width="30" height="30" alt="" />Ancrate</a><p>A little more clarity for your Apple Notes.</p></div>
+      <div><a class="brand" href="/"><img src="/icon.png" width="30" height="30" alt="" />Ancrate</a><p>A companion for Apple Notes.</p></div>
       <div class="footer-links"><a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href={`mailto:${app.supportEmail}`}>Contact</a></div>
       <p class="copyright">© 2026 Volodymyr Boichentsov · Made in Ireland.<br /><a href="https://sakrist.com">sakrist.com ↗</a></p>
     </footer>
