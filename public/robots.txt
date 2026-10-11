@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ancrate.sakrist.com/sitemap.xml

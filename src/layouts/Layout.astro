@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+import { app } from '../config';
+interface Props { title: string; description: string }
+const { title, description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#fbfaf6" />
+    <link rel="icon" href="/icon.png" type="image/png" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/social.png', Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header wrap">
+      <a class="brand" href="/" aria-label="Ancrate home"><img src="/icon.png" width="38" height="38" alt="" />Ancrate</a>
+      <nav aria-label="Main navigation">
+        <a href="/#features">Features</a>
+        <a href="/support/" aria-current={Astro.url.pathname === '/support/' ? 'page' : undefined}>Support</a>
+        <a class="nav-button" href={app.downloadUrl || '/#availability'}>{app.downloadUrl ? 'Get Ancrate' : 'Coming soon'}<span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer wrap">
+      <div><a class="brand" href="/"><img src="/icon.png" width="30" height="30" alt="" />Ancrate</a><p>A little more clarity for your Apple Notes.</p></div>
+      <div class="footer-links"><a href="/support/">Support</a><a href="/privacy/">Privacy</a><a href={`mailto:${app.supportEmail}`}>Contact</a></div>
+      <p class="copyright">© 2026 Volodymyr Boichentsov · Made in Ireland.<br /><a href="https://sakrist.com">sakrist.com ↗</a></p>
+    </footer>
+  </body>
+</html>
