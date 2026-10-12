@@ -1,0 +1,18 @@
+{
+  "status": "candidate",
+  "version": "1.0",
+  "build": "8",
+  "downloadUrl": "https://ancrate.sakrist.com/downloads/candidates/Ancrate-1.0-8-7fbba84b.dmg",
+  "releaseNotesUrl": "https://ancrate.sakrist.com/releases/candidates/Ancrate-1.0-8-7fbba84b.html",
+  "updateFeedUrl": "https://ancrate.sakrist.com/updates/candidates/appcast.xml",
+  "sha256": "7fbba84b2cf69301652071cf015ea2680422eecc568e002b0fb63580eeb5313e",
+  "bytes": 6057522,
+  "verification": {
+    "appNotarized": true,
+    "dmgTicketVerified": false,
+    "cleanInstallVerified": false,
+    "signedUpgradeVerified": false,
+    "sparkleArchiveSignatureVerified": true
+  },
+  "sparkleArchiveSignature": "uTKADmBG7azRamV4pvoDImhgHijJeTAFScvleS+toIW4xjVGJWCJdDlgSpkmkEH5JTmG+xU+Ltu4Gop3H3DSDQ=="
+}

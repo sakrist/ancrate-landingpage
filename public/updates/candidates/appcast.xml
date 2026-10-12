@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+  <channel>
+    <title>Ancrate Candidate Updates</title>
+    <link>https://ancrate.sakrist.com</link>
+    <description>Candidate feed for verification after upload.</description>
+    <language>en</language>
+    <item>
+      <title>Ancrate 1.0 (8) candidate</title>
+      <link>https://ancrate.sakrist.com</link>
+      <pubDate>Mon, 12 Oct 2026 16:32:02 GMT</pubDate>
+      <sparkle:version>8</sparkle:version>
+      <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0.0</sparkle:minimumSystemVersion>
+      <sparkle:releaseNotesLink>https://ancrate.sakrist.com/releases/candidates/Ancrate-1.0-8-7fbba84b.html</sparkle:releaseNotesLink>
+      <enclosure url="https://ancrate.sakrist.com/downloads/candidates/Ancrate-1.0-8-7fbba84b.dmg" sparkle:edSignature="uTKADmBG7azRamV4pvoDImhgHijJeTAFScvleS+toIW4xjVGJWCJdDlgSpkmkEH5JTmG+xU+Ltu4Gop3H3DSDQ==" length="6057522" type="application/octet-stream" />
+    </item>
+  </channel>
+</rss>

@@ -39,3 +39,37 @@ workflow publishes a container on pushes to `main`, tagged with the commit
 SHA and `latest`. Use an immutable version for releases.
 
 Hosting configuration is managed separately from this repository.
+
+## Direct download and updates
+
+Ancrate is intended for Developer ID-signed, notarized website distribution.
+`public/updates/appcast.xml` is an intentionally empty Sparkle feed until a verified signed release is available; nginx disables long-lived caching for this path.
+
+Publish immutable versioned artifacts before adding a signed enclosure to the feed. Keep Sparkle’s private signing key out of this repository and the web server. Only set `src/config.ts`’s download URL after notarization and installation/upgrade checks pass. Hosting/deployment is managed separately.
+
+A one-time Stripe purchase priced at 4.99 is planned later; currency, tax presentation and licensing remain to be decided. No checkout or price claim is published by these changes.
+
+The app repository provides `scripts/package-direct-release.sh` and
+`scripts/create-update-feed.sh`; see its `docs/direct-release-workflow.md`.
+Copy only verified notarized DMGs into `public/downloads/` and matching release
+notes into `public/releases/`. Upload/verify artifacts before updating
+`public/updates/appcast.xml`. Versioned downloads use immutable caching; the
+feed must revalidate. Keep the download URL empty until installation, real
+signed-upgrade testing and the initial purchase decision are complete.
+
+## Candidate upload for verification
+
+The owner requested uploading build 8 before completing distribution verification.
+Its immutable candidate DMG and notes are under `/downloads/candidates/` and
+`/releases/candidates/`; metadata is in `/releases/candidates/manifest.json`.
+The candidate feed is `/updates/candidates/appcast.xml`. The production feed
+remains empty and the homepage stays prelaunch unless the owner changes that choice.
+
+The candidate app is Developer ID-signed and notarized. Retrieval of the DMG’s
+own ticket, clean-install checks and a real signed upgrade remain open. Stapling
+changes archive bytes: publish a new artifact name and signature afterward,
+rather than replacing this immutable URL.
+
+Deployment is in `sakrist/k3s-cluster`, under `ancrate-landing/`. After the image
+build succeeds, pin its source SHA and digest in the Deployment and push that
+specific manifest change. Argo CD syncs two replicas in `ancrate-web`.
