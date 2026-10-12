@@ -28,6 +28,8 @@ jobs:
           context: .
           push: true
           platforms: linux/amd64
+          build-args: |
+            PUBLIC_SUPPORT_EMAIL=${{ vars.PUBLIC_SUPPORT_EMAIL }}
           tags: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
